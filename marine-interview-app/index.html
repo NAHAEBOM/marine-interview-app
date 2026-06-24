@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marine Interview App | 주관식 학습</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div><h1>Marine Interview App</h1><p>해기사 면접 기출 주관식 학습 앱</p></div>
+  <div class="top-actions"><button id="darkBtn">🌙</button><button id="exportBtn">진도 백업</button></div>
+</header>
+<main class="layout">
+  <aside class="panel sidebar">
+    <input id="search" placeholder="질문·답안 검색" />
+    <select id="sourceFilter"><option value="">전체 파일</option></select>
+    <select id="categoryFilter"><option value="">전체 과목/분야</option></select>
+    <div class="chips">
+      <button data-mode="all" class="chip active">전체</button>
+      <button data-mode="unseen" class="chip">미완료</button>
+      <button data-mode="done" class="chip">암기</button>
+      <button data-mode="wrong" class="chip">다시공부</button>
+      <button data-mode="star" class="chip">★중요</button>
+    </div>
+    <div class="stats"><div><b id="statTotal">0</b><span>문항</span></div><div><b id="statDone">0</b><span>암기</span></div><div><b id="statLeft">0</b><span>남음</span></div></div>
+    <div class="side-actions"><button id="shuffleBtn">랜덤 섞기</button><button id="wrongOnlyBtn">오답 집중</button></div>
+    <div id="qList" class="q-list"></div>
+  </aside>
+  <section class="panel study">
+    <div class="meta" id="meta">문제를 선택하세요.</div>
+    <h2 id="question">문제</h2>
+    <textarea id="myAnswer" placeholder="여기에 직접 답안을 작성하세요. 저장은 브라우저에 자동 보관됩니다."></textarea>
+    <div class="toolbar">
+      <button id="showBtn">정답 보기</button>
+      <button id="doneBtn" class="good">암기 완료</button>
+      <button id="wrongBtn" class="bad">다시 공부</button>
+      <button id="starBtn" class="light">★ 중요</button>
+      <button id="nextBtn">다음</button>
+    </div>
+    <pre id="answer" class="answer"></pre>
+  </section>
+</main>
+<section class="panel raw-panel">
+  <details><summary>원문 전체 확인</summary><p class="hint">문항 추출과 별도로 업로드 문서의 추출 원문을 조각 단위로 모두 넣었습니다.</p><input id="rawSearch" placeholder="원문 검색" /><div id="rawList"></div></details>
+</section>
+<script src="data/questions.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
